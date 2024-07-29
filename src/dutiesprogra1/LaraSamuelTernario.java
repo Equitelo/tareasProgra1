@@ -12,7 +12,7 @@ public class LaraSamuelTernario {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner lea=new Scanner(System.in);
+        Scanner lea=new Scanner(System.in).useDelimiter("\n");
     
         /*
         Operador Ternario
@@ -51,5 +51,24 @@ public class LaraSamuelTernario {
         }
         //Ejemplo con formulas
         
+        double pi=3.14;
+        double diametro;
+        
+        System.out.println("");
+        System.out.print("Ingrese el diametro del circulo: ");
+        diametro=lea.nextDouble();
+        
+        if(diametro>0){
+            double radio=(diametro>=0)?radio=diametro/2:0;
+
+            System.out.println("Teniendo el radio equivalente: "+radio);
+            System.out.println("Podemos calcular el area multiplicandolo por pi");
+            System.out.println("Para ello escribe el valor de pi (redonder a la centesima mas cercana): ");
+            double comprobar=lea.nextDouble();
+            
+            double area=(comprobar==pi)?area=diametro*pi:0;
+            
+            System.out.println("El area es de: "+area);        
+        }
     }    
 }
