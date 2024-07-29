@@ -14,12 +14,18 @@ public class LaraSamuelTernario {
     public static void main(String[] args) {
         Scanner lea=new Scanner(System.in);
     
-        //El Operador ternario
         /*
-        El operador ternario es una condicion que se posee un valor que si se cumple (Osea si es verdadero)
-        ejecuta una accion, caso contrario (falso) ejecuta otra opcion.
-        El formato es el siguiente
-        (Toipo de dato)(variable)=(condicion logica)? Accion si es verdadera:Accion si es falsa
+        Operador Ternario
+
+        El operador ternario cuenta con una estructura un tanto distinta a las demas,
+        este cuenta con la siguiente estructura:
+
+        (Prueba Logica)?"True":"False"
+
+        de antemano nos damos cuenta que es un tipo booleano y este te devuelve 
+        verdadero, si y solo si la prueba logica es cierta y falso si la prueba logica 
+        es falsa. Algunos afirman que es como la estructura condicional if-else, aunque 
+        a una solo linea de codigo
         */
         
         //Ejemplo valor constante
@@ -33,7 +39,16 @@ public class LaraSamuelTernario {
         
         //Ejemplo con variables
         
+        int colores;
         
+        System.out.println(" ");
+        System.out.print("Cuantos colores tiene Honduras en su bandera?: ");
+        colores=lea.nextInt();
+        
+        if(colores>0){
+            String revision=(colores==2)?"Su respuesta es correcta!":"La bandera cuenta con dos solamente.";
+            System.out.println(revision);
+        }
         //Ejemplo con formulas
         
     }    
