@@ -14,12 +14,14 @@ public class LaraSamCiclos {
         int opcion=0;
         String respuesta;
         
-        while(opcion!=3){
-        System.out.println("");
-        System.out.println("1 - Palabra Palindroma \n2 - Palabra Flecha\n3 - Terminar");
-        System.out.print("Ingresar la opcion que guste: ");
-        opcion=lea.nextInt();
-        
+        while(opcion!=4){
+            do{
+                System.out.println("");
+                System.out.println("1 - Palabra Diagonal \n2 - Verificar Palindroma\n3 - Piramide\n4 - Salir");
+                System.out.print("Ingresar la opcion que guste: ");
+                opcion=lea.nextInt();
+            }while(opcion<0||opcion>4);
+            
             if(opcion==1){
                 System.out.println(" ");
                 System.out.print("Ingresar palabra: ");
@@ -56,23 +58,44 @@ public class LaraSamCiclos {
                     descontador--;
                 }
             }else if(opcion==2){
+                int contador=0;
                 
-//                System.out.println("Ingresar numero principal de piramide al reves: ");
-//                int numeroP=lea.nextInt();
-//                
-//                for(int contPrincipal=0;contPrincipal<numeroP;contPrincipal++){
-//                    
-//                    for(){
-//                    
-//                    }
-//                    
-//                    for(int contAlreves=0;;contAlreves){
-//                        
-//                    }
-//                    
-//                }
+                System.out.println("");
+                System.out.println("***VERIFICACION DE PALABRA PALINDROMA***");
+                System.out.print("Ingresar la cantidad de palabras: ");
+                int cantidad=lea.nextInt();
+                
+                while(contador<cantidad){
+                    contador++;
+                    System.out.println("Ingresar palabra #"+contador+": ");
+                    String palabra=lea.next();
+                    
+                    int reversa=palabra.length();
+                    
+                    while(reversa>0){
+                        reversa--;
+                        System.out.print(palabra.charAt(reversa));
+                    }
+                    
+                }
+                
+            }else if(opcion==3){
+                System.out.print("Ingresar numero principal de piramide al reves: ");
+                int numeroP=lea.nextInt();
+                
+                for(int contPrincipal=0;contPrincipal<numeroP;contPrincipal++){
+                    
+                    for(int espacio=0;espacio<numeroP;espacio++){
+                        System.out.print("  ");
+                    }
+                    
+                    for(int contAlreves=numeroP;contAlreves>=1;contAlreves--){
+                        System.out.print(contAlreves);
+                    }
+                    System.out.println("");
+                }
             }else{
-                System.out.println("No");
+                System.out.println("Saliendo del sistema");
             }
         }
     }
