@@ -30,11 +30,11 @@ public class LaraSamCiclos {
                 int contador = 0;
                 
                 while (contador < word.length()) {
-                    int espacio=word.length()+contador;
-                    String empty="  ";
+                    int espacio=word.length()-contador;
+                    
                     char letras = word.charAt(contador);
                     while(espacio>1){
-                        System.out.print(empty);
+                        System.out.print("  ");
                         espacio--;
                     }   
                     System.out.println(letras);
@@ -43,16 +43,15 @@ public class LaraSamCiclos {
                 
                 int descontador=word.length()-1;
                 
-                String vacio="  ";
                 
                 while(descontador >= 0){
                     
-                    int espacio=word.length()+descontador;
+                    int espacio=word.length()-descontador;
                     char letraAlreves=word.charAt(descontador);
                     System.out.println(letraAlreves);
                     
                     while(espacio>0){
-                        System.out.print(vacio);
+                        System.out.print("  ");
                         espacio--;
                     }
                     descontador--;
@@ -85,14 +84,16 @@ public class LaraSamCiclos {
                 
                 for(int contPrincipal=0;contPrincipal<numeroP;contPrincipal++){
                     
-                    for(int espacio=0;espacio<numeroP;espacio++){
-                        System.out.print("  ");
+                    for(int espacio=numeroP-contPrincipal;espacio<numeroP;espacio++){
+                        System.out.print(" ");
                     }
-                    
-                    for(int contAlreves=numeroP;contAlreves>=1;contAlreves--){
+                    for(int cont=1+contPrincipal;cont<=numeroP;cont++){
+                        System.out.print(cont);
+                    }
+                    for(int contAlreves=numeroP-1;contAlreves>=1;contAlreves--){
                         System.out.print(contAlreves);
                     }
-                    System.out.println("");
+                    System.out.println();
                 }
             }else{
                 System.out.println("Saliendo del sistema");
