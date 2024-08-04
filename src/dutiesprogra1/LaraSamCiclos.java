@@ -57,8 +57,12 @@ public class LaraSamCiclos {
                     descontador--;
                 }
             }else if(opcion==2){
+                //palabra
+                String palabra="";
+                //ciclos
                 int contador=0;
-                
+                int reversa=0;
+                String contenedor="";
                 System.out.println("");
                 System.out.println("***VERIFICACION DE PALABRA PALINDROMA***");
                 System.out.print("Ingresar la cantidad de palabras: ");
@@ -67,31 +71,44 @@ public class LaraSamCiclos {
                 while(contador<cantidad){
                     contador++;
                     System.out.println("Ingresar palabra #"+contador+": ");
-                    String palabra=lea.next();
+                    palabra=lea.next();
                     
-                    int reversa=palabra.length();
+                    reversa=palabra.length();
                     
                     while(reversa>0){
                         reversa--;
-                        System.out.print(palabra.charAt(reversa));
+                        char palindroma=palabra.charAt(reversa);
+                        contenedor+=palindroma;
+                        System.out.print(palindroma);
                     }
                     
                 }
+                if(contenedor.equals(palabra)){
+                    System.out.println("****PALINDROMAS****");
+                    System.out.println("-"+palabra);
+                }else{
+                    System.out.println("***NO PALINDROMAS***");
+                    System.out.println("-"+palabra);
+                }
                 
             }else if(opcion==3){
+                
+                String space="  ";
+                
                 System.out.print("Ingresar numero principal de piramide al reves: ");
                 int numeroP=lea.nextInt();
                 
-                for(int contPrincipal=0;contPrincipal<numeroP;contPrincipal++){
+                for(int contPrincipal=1;contPrincipal<=numeroP;contPrincipal++){
                     
-                    for(int espacio=numeroP-contPrincipal;espacio<numeroP;espacio++){
-                        System.out.print(" ");
+                    for(int espacio=1;espacio<=contPrincipal-1;espacio++){
+                        space+="";
+                        System.out.print(space);
                     }
-                    for(int cont=1+contPrincipal;cont<=numeroP;cont++){
-                        System.out.print(cont);
+                    for(int cont=contPrincipal;cont<=numeroP;cont++){
+                        System.out.print(cont+" ");
                     }
-                    for(int contAlreves=numeroP-1;contAlreves>=1;contAlreves--){
-                        System.out.print(contAlreves);
+                    for(int contAlreves=numeroP-1;contAlreves>=contPrincipal;contAlreves--){
+                        System.out.print(contAlreves+" ");
                     }
                     System.out.println();
                 }
