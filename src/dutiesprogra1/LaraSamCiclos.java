@@ -26,34 +26,37 @@ public class LaraSamCiclos {
                 System.out.println(" ");
                 System.out.print("Ingresar palabra: ");
                 String word=lea.next().toUpperCase();
-
+                //cilo para impresion de la palabra ingresada
                 int contador = 0;
-                
                 while (contador < word.length()) {
-                    int espacio=0;
                     
+                    //separacion en letras de la palabra
                     char letras = word.charAt(contador);
+                    
+                    //ciclo para imprimir diagonalmente hacia la derecha
+                    int espacio=0;
                     while(espacio<contador){
                         System.out.print("  ");
                         espacio++;
                     }   
+                    //impresion de pantalla para salto de linea a cada letra
                     System.out.println(letras);
                     contador+=1;
                 }
-                
+                //cilo para impresion alreves de la palabra ingresada
                 int descontador=word.length()-1;
-                
-                
                 while(descontador >= 0){
                     
-                    int espacio=0;
+                    //separacion en letras de la palabra
                     char letraAlreves=word.charAt(descontador);
                     
-                    
+                    //ciclo para imprimir diagonalmente hacia la izquierda
+                    int espacio=0;
                     while(espacio<descontador){
                         System.out.print("  ");
                         espacio++;
                     }
+                    //impresion de pantalla para salto de linea a cada letra
                     System.out.println(letraAlreves);
                     descontador--;
                 }
