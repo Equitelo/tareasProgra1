@@ -100,23 +100,23 @@ public class LaraSamCiclos {
                 System.out.println(noEs);
             }else if(opcion==3){
                 
-                String space="  ";
-                
                 System.out.print("Ingresar numero principal de piramide al reves: ");
                 int numeroP=lea.nextInt();
-                
+                //ciclo principal
                 for(int contPrincipal=1;contPrincipal<=numeroP;contPrincipal++){
-                    
+                    //ciclo para el espacio
                     for(int espacio=1;espacio<=contPrincipal-1;espacio++){
-                        space+="";
-                        System.out.print(space);
+                        System.out.print(" ");
                     }
+                    //ciclo contador de menor a mayor
                     for(int cont=contPrincipal;cont<=numeroP;cont++){
                         System.out.print(cont+" ");
                     }
+                    //ciclo contador de mayor a menor
                     for(int contAlreves=numeroP-1;contAlreves>=contPrincipal;contAlreves--){
                         System.out.print(contAlreves+" ");
                     }
+                    //salto de linea para la realizacion de las filas
                     System.out.println();
                 }
             }else{
