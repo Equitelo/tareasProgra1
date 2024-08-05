@@ -30,12 +30,12 @@ public class LaraSamCiclos {
                 int contador = 0;
                 
                 while (contador < word.length()) {
-                    int espacio=word.length()-contador;
+                    int espacio=0;
                     
                     char letras = word.charAt(contador);
-                    while(espacio>1){
+                    while(espacio<contador){
                         System.out.print("  ");
-                        espacio--;
+                        espacio++;
                     }   
                     System.out.println(letras);
                     contador+=1;
@@ -46,23 +46,29 @@ public class LaraSamCiclos {
                 
                 while(descontador >= 0){
                     
-                    int espacio=word.length()-descontador;
+                    int espacio=0;
                     char letraAlreves=word.charAt(descontador);
-                    System.out.println(letraAlreves);
                     
-                    while(espacio>0){
+                    
+                    while(espacio<descontador){
                         System.out.print("  ");
-                        espacio--;
+                        espacio++;
                     }
+                    System.out.println(letraAlreves);
                     descontador--;
                 }
             }else if(opcion==2){
                 //palabra
                 String palabra="";
+                String siEs="";
+                String noEs="";
                 //ciclos
                 int contador=0;
-                int reversa=0;
-                String contenedor="";
+                int reversa;
+                //contadores para impresion de pantalla
+                int palindroCont=1;
+                int noPalindro=1;
+                
                 System.out.println("");
                 System.out.println("***VERIFICACION DE PALABRA PALINDROMA***");
                 System.out.print("Ingresar la cantidad de palabras: ");
@@ -70,27 +76,28 @@ public class LaraSamCiclos {
                 
                 while(contador<cantidad){
                     contador++;
-                    System.out.println("Ingresar palabra #"+contador+": ");
+                    System.out.print("Ingresar palabra #"+contador+": ");
                     palabra=lea.next();
-                    
+                   
                     reversa=palabra.length();
-                    
+                    String contenedor="";
                     while(reversa>0){
                         reversa--;
                         char palindroma=palabra.charAt(reversa);
                         contenedor+=palindroma;
-                        System.out.print(palindroma);
+                    }   
+                    if(palabra.equals(contenedor)){
+                        siEs+=palindroCont+"-"+palabra+"\n";
+                        palindroCont++;
+                    }else{
+                        noEs+=noPalindro+"-"+palabra+"\n";
+                        noPalindro++;
                     }
-                    
                 }
-                if(contenedor.equals(palabra)){
-                    System.out.println("****PALINDROMAS****");
-                    System.out.println("-"+palabra);
-                }else{
-                    System.out.println("***NO PALINDROMAS***");
-                    System.out.println("-"+palabra);
-                }
-                
+                System.out.println("\nPALABRAS PALINDROMAS:");
+                System.out.println(siEs);
+                System.out.println("\nPALABRAS NO PALINDROMAS:");
+                System.out.println(noEs);
             }else if(opcion==3){
                 
                 String space="  ";
