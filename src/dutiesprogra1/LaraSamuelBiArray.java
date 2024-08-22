@@ -34,10 +34,13 @@ public class LaraSamuelBiArray {
                 if(i==j){
                     totalUno+=arregloBi[i][j];
                 }
+                if(i+j==cantidad-1){
+                    totalDos+=arregloBi[i][j];
+                }
             }
             System.out.println("");
         }
         System.out.println("La suma diagonal principal: "+totalUno);
-        System.out.println("La suma diagonal secundaria: ");
+        System.out.println("La suma diagonal secundaria: "+totalDos);
     }
 }
