@@ -55,7 +55,7 @@ public class LaraSamuelTryCatch {
                 System.out.println("El area mayor es: "+areaMayor+" encontrado en el traingulo #"+encontradoEn);
             }else if(opcion==2){
                 System.out.println("MCM y MCD");
-                System.out.println("Vamos a ingresar dos numeros para versus respectivos MCM y MCD");
+                System.out.println("Vamos a ingresar dos numeros para ver sus respectivos MCM y MCD");
                 System.out.print("Ingresar el numero #1: ");
                 int numeroUno=lea.nextInt();
                 System.out.print("Ingresar el numero #2: ");
